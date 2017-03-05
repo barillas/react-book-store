@@ -19,6 +19,7 @@ class BookDetailsPage extends React.Component {
         price: book.price
       };
       this.props.addToCart(item);
+      console.log(item);
     }
 
     render() {

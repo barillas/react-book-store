@@ -1,4 +1,3 @@
-// ./src/components/cart/CartPage.js
 import React, {PropTypes} from 'react';
 import {connect} from 'react-redux';
 import * as bookActions from '../../actions/bookActions';
@@ -9,7 +8,7 @@ class CartPage extends React.Component {
         super(props, context);
     }
 
-  componentDidMount(){
+  componentWillMount(){
     this.props.fetchCart();
   }
 
