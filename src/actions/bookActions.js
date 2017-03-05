@@ -50,3 +50,25 @@ export const createBookSuccess = (book) => {
     book
   }
 };
+
+// ./src/actions/bookActions.js
+// Sync Action
+export const fetchBookByIdSuccess = (book) => {
+  return {
+    type: actionTypes.FETCH_BOOK_BY_ID_SUCCESS,
+    book
+  }
+};
+// Async Action
+export const fetchBookById = (bookId) => {
+  return (dispatch) => {
+    return Axios.get(apiUrl + '/' +bookId)
+      .then(response => {
+        // Handle data with sync action
+        dispatch(fetchBookByIdSuccess(response.data));
+      })
+      .catch(error => {
+        throw(error);
+      });
+  };
+};
