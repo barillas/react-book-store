@@ -12,8 +12,6 @@ import configureStore from './store/configureStore';
 
 const store = configureStore();
 store.dispatch(bookActions.fetchBooks());
-console.log(store.dispatch(bookActions.fetchBooks()));
-
 render(
   <Provider store={store}>
     <Router routes={routes} history={browserHistory} />
