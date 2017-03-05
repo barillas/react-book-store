@@ -1,34 +1,26 @@
-// ./src/components/book/BookDetailsPage.js
-import React, {PropTypes} from 'react';
-import {connect} from 'react-redux';
-import {bindActionCreators} from 'redux';
-import BookDetails from './BookDetails';
+// ./src/components/book/BookDetails.js
+import React from 'react';
 
-class BookDetailsPage extends React.Component {
-    constructor(props, context) {
-        super(props, context);
-    }
+const BookDetails = ({book}) => {
+    return (
+      <div className="media">
+        <div className="media-left">
+          <a href="#">
+            <img className="media-object" src="http://placehold.it/200/550" alt="Placehold" />
+          </a>
+        </div>
+        <div className="media-body">
+          <h4 className="media-heading">{book.title}</h4>
+          <ul>
+            <li><stron>Author: </stron> {book.author}</li>
+            <li><stron>Price: </stron> ${book.price}</li>
+            <li><stron>Year: </stron> {book.year}</li>
+            <br/>
+            <button className="btn btn-primary">Buy</button>
+          </ul>
+        </div>
+      </div>
+    );
+};
 
-    render() {
-        return (
-            <div>
-                <h1>Book Details Page</h1>
-                <BookDetails />
-            </div>
-        );
-    }
-}
-
-const mapStateToProps = (state, ownProps) => {
-    return {
-        // state mappings here
-    };
-}
-
-const mapDispatchToProps = (dispatch) => {
-    return {
-        // actions mappings here
-    };
-}
-
-export default connect(mapStateToProps, mapDispatchToProps)(BookDetailsPage);
+export default BookDetails;

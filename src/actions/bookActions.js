@@ -1,5 +1,6 @@
 // ./src/actions/bookActions.js
 // API URL
+import {CREATE_BOOK_SUCCESS, FETCH_BOOKS_SUCCESS, FETCH_BOOK_BY_ID_SUCCESS, ADD_TO_CART_SUCCESS, FETCH_CART_SUCCESS } from '../actions/actionTypes';
 
 import Axios from 'axios';
 
@@ -7,7 +8,7 @@ const apiUrl = 'http://58bb6f69673bee120092eea5.mockapi.io/books';
 // Sync Action
 export const fetchBooksSuccess = (books) => {
   return {
-    type: 'FETCH_BOOKS_SUCCESS',
+    type: FETCH_BOOKS_SUCCESS,
     books
   }
 };
@@ -46,7 +47,7 @@ export const createBook = (book) => {
 // ./src/actions/bookActions.js
 export const createBookSuccess = (book) => {
   return {
-    type: 'CREATE_BOOK_SUCCESS',
+    type: CREATE_BOOK_SUCCESS,
     book
   }
 };
@@ -55,7 +56,7 @@ export const createBookSuccess = (book) => {
 // Sync Action
 export const fetchBookByIdSuccess = (book) => {
   return {
-    type: actionTypes.FETCH_BOOK_BY_ID_SUCCESS,
+    type: FETCH_BOOK_BY_ID_SUCCESS,
     book
   }
 };
